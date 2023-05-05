@@ -13,7 +13,7 @@ public class HotelService {
     HotelRepository hotelRepository = new HotelRepository();
 
     public String addHotel(Hotel hotel) {
-        if(hotel == null){
+        if(hotel == null || hotel.getHotelName() == null){
             return "FAILURE";
         }
         else if(hotelRepository.hotelMap.containsKey(hotel.getHotelName())){
